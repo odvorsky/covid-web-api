@@ -1,3 +1,5 @@
+//TODO
+
 CREATE TABLE IF NOT EXISTS `countries` (
   `num_code` int(3) NOT NULL DEFAULT '0',
   `alpha_2_code` varchar(2) DEFAULT NULL,

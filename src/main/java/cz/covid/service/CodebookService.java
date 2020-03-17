@@ -18,5 +18,7 @@ public interface CodebookService {
 
     void deleteCodebookValue(CodebookName codebookName, Long id);
 
-    CodebookValue getCodebookReference(CodebookName codebookName, Long id);
+    CodebookValueDto mapToCodebookValueDto(CodebookValue codebookValue);
+
+    <T> T getCodebookReference(CodebookName codebookName, Long id, Class<T> clazz);
 }

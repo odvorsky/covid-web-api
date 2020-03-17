@@ -22,6 +22,10 @@ public class Consent extends Meta {
     @JoinColumn(name = "CONSENT_TYPE_ID")
     private ConsentType consentType;
 
+    @ManyToOne
+    @JoinColumn(name = "PERSON_ID")
+    private Person person;
+
     public Long getId() {
         return id;
     }
@@ -44,5 +48,13 @@ public class Consent extends Meta {
 
     public void setConsentType(ConsentType consentType) {
         this.consentType = consentType;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
     }
 }

@@ -54,8 +54,7 @@ public class Person extends Meta {
     @JoinColumn(name = "PERSON_ID")
     private List<Comorbidity> comorbidities;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "PERSON_ID")
+    @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Consent> signedConsents;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)

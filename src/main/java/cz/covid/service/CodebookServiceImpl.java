@@ -73,11 +73,12 @@ public class CodebookServiceImpl implements CodebookService, InitializingBean {
 
     @SuppressWarnings("unchecked")
     @Override
-    public CodebookValue getCodebookReference(CodebookName codebookName, Long id) {
-        return (CodebookValue) this.getCodebookRepository(codebookName).getOne(id);
+    public <T> T getCodebookReference(CodebookName codebookName, Long id, Class<T> clazz) {
+        return (T) this.getCodebookRepository(codebookName).getOne(id);
     }
 
-    private CodebookValueDto mapToCodebookValueDto(CodebookValue codebookValue) {
+    @Override
+    public CodebookValueDto mapToCodebookValueDto(CodebookValue codebookValue) {
         CodebookValueDto codebookValueDto = new CodebookValueDto();
         BeanUtils.copyProperties(codebookValue, codebookValueDto);
         return codebookValueDto;
